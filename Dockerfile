@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir --upgrade -r /requirements/dev.txt
 COPY ./src /src
 
 # Set the default command to run when the container starts
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "src.app.app:app", "--host", "0.0.0.0", "--port", "80"]
