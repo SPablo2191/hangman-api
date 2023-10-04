@@ -1,15 +1,7 @@
-from fastapi import FastAPI, Depends
-
-from app.config import get_settings, Settings
-
-
+from fastapi import FastAPI
+from dotenv import load_dotenv
+import os
+load_dotenv()
 app = FastAPI()
 
 
-@app.get("/ping")
-async def pong(settings: Settings = Depends(get_settings)):
-    return {
-        "ping": "pong!",
-        "environment": settings.environment,
-        "testing": settings.testing
-    }
